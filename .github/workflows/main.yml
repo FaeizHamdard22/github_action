@@ -7,17 +7,17 @@ jobs:
     
     steps :
     
-    -name: Checkout code
+    - name: Checkout code
       run: |
         git clone https://github.com/FaeizHamdard22/github_action.git
         mv github_action/{.,}* .
 
-    -name: install pip and python
+    - name: install pip and python
       run: sudo apt-get update && sudo apt-get install python3 && sudo apt-get install python3-pip
 
-    -name: install dependencies
+    - name: install dependencies
       run: pip install -r requirements.txt
 
-    -name: Run test
+    - name: Run test
       run: pytest test.py
       
